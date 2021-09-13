@@ -1,7 +1,6 @@
 C:\Programas\Boteco\bin\Debug\Boteco.exe.config
 C:\Programas\Boteco\bin\Debug\Boteco.exe
 C:\Programas\Boteco\bin\Debug\Boteco.pdb
-C:\Programas\Boteco\obj\Debug\Boteco.csproj.AssemblyReference.cache
 C:\Programas\Boteco\obj\Debug\Boteco.FormPrincipal.resources
 C:\Programas\Boteco\obj\Debug\Boteco.Properties.Resources.resources
 C:\Programas\Boteco\obj\Debug\Boteco.csproj.GenerateResource.cache
@@ -11,3 +10,7 @@ C:\Programas\Boteco\obj\Debug\Boteco.pdb
 C:\Programas\Boteco\bin\Debug\DbBoteco.mdf
 C:\Programas\Boteco\bin\Debug\DbBoteco_log.ldf
 C:\Programas\Boteco\obj\Debug\Boteco.FormFuncionario.resources
+C:\Programas\Boteco\obj\Debug\Boteco.FormLogin.resources
+C:\Programas\Boteco\obj\Debug\Boteco.FormSplash.resources
+C:\Programas\Boteco\obj\Debug\Boteco.csproj.AssemblyReference.cache
+C:\Programas\Boteco\obj\Debug\Boteco.FormCliente.resources

@@ -72,6 +72,7 @@ namespace Boteco
             this.btnLocalizar.TabIndex = 17;
             this.btnLocalizar.Text = "Localizar";
             this.btnLocalizar.UseVisualStyleBackColor = true;
+            this.btnLocalizar.Click += new System.EventHandler(this.btnLocalizar_Click);
             // 
             // label1
             // 
@@ -293,6 +294,7 @@ namespace Boteco
             this.btnAtualizar.TabIndex = 14;
             this.btnAtualizar.Text = "Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // btnApagar
             // 
@@ -302,6 +304,7 @@ namespace Boteco
             this.btnApagar.TabIndex = 15;
             this.btnApagar.Text = "Apagar";
             this.btnApagar.UseVisualStyleBackColor = true;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
             // 
             // btnSair
             // 
@@ -380,6 +383,7 @@ namespace Boteco
             this.Name = "FormFuncionario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Funcionário";
+            this.Load += new System.EventHandler(this.FormFuncionario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

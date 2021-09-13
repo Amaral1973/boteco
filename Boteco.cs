@@ -45,6 +45,7 @@ namespace Boteco
             {
                 Boteco f = new Boteco();
                 f.nome = dr["nome"].ToString();
+                f.endereco = dr["endereco"].ToString();
                 f.celular = dr["celular"].ToString();
                 f.cpf = dr["cpf"].ToString();
                 f.cc = dr["cc"].ToString();
@@ -65,6 +66,7 @@ namespace Boteco
 
         public void LocalizaFunc(int id)
         {
+            con.Open();
             string sql = "SELECT * FROM Funcionario WHERE Id = '"+id+"'";
             SqlCommand cmd = new SqlCommand(sql, con);
             SqlDataReader dr = cmd.ExecuteReader();
@@ -84,6 +86,8 @@ namespace Boteco
                 pix = dr["pix"].ToString();
                 funcao = dr["funcao"].ToString();
             }
+            dr.Close();
+            con.Close();
         }
 
         public void AtualizarFunc(int id, string nome, string celular, string endereco, string complemento, string cidade, string cep, string cpf, string cc, string pix, string genero, DateTime data_nascimento, string funcao)
