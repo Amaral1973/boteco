@@ -61,6 +61,7 @@ namespace Boteco
             this.btnSair = new System.Windows.Forms.Button();
             this.cbxGenero = new System.Windows.Forms.ComboBox();
             this.cbxFuncao = new System.Windows.Forms.ComboBox();
+            this.btnVerificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,6 +98,7 @@ namespace Boteco
             this.dgvFuncionario.Name = "dgvFuncionario";
             this.dgvFuncionario.Size = new System.Drawing.Size(726, 171);
             this.dgvFuncionario.TabIndex = 3;
+            this.dgvFuncionario.DoubleClick += new System.EventHandler(this.dgvFuncionario_DoubleClick);
             // 
             // txtNome
             // 
@@ -132,6 +134,7 @@ namespace Boteco
             // 
             // txtEndereco
             // 
+            this.txtEndereco.Enabled = false;
             this.txtEndereco.Location = new System.Drawing.Point(15, 163);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(279, 20);
@@ -156,7 +159,7 @@ namespace Boteco
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(307, 100);
+            this.label5.Location = new System.Drawing.Point(213, 100);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 13);
             this.label5.TabIndex = 10;
@@ -189,6 +192,7 @@ namespace Boteco
             // 
             // txtCidade
             // 
+            this.txtCidade.Enabled = false;
             this.txtCidade.Location = new System.Drawing.Point(310, 163);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(160, 20);
@@ -229,7 +233,7 @@ namespace Boteco
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(483, 100);
+            this.label10.Location = new System.Drawing.Point(400, 101);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(31, 13);
             this.label10.TabIndex = 20;
@@ -237,7 +241,7 @@ namespace Boteco
             // 
             // txtCEP
             // 
-            this.txtCEP.Location = new System.Drawing.Point(486, 116);
+            this.txtCEP.Location = new System.Drawing.Point(403, 117);
             this.txtCEP.Name = "txtCEP";
             this.txtCEP.Size = new System.Drawing.Size(142, 20);
             this.txtCEP.TabIndex = 5;
@@ -323,7 +327,7 @@ namespace Boteco
             "Masculino",
             "Feminino",
             "Outro"});
-            this.cbxGenero.Location = new System.Drawing.Point(310, 116);
+            this.cbxGenero.Location = new System.Drawing.Point(216, 116);
             this.cbxGenero.Name = "cbxGenero";
             this.cbxGenero.Size = new System.Drawing.Size(160, 21);
             this.cbxGenero.TabIndex = 4;
@@ -340,11 +344,22 @@ namespace Boteco
             this.cbxFuncao.Size = new System.Drawing.Size(144, 21);
             this.cbxFuncao.TabIndex = 11;
             // 
+            // btnVerificar
+            // 
+            this.btnVerificar.Location = new System.Drawing.Point(553, 113);
+            this.btnVerificar.Name = "btnVerificar";
+            this.btnVerificar.Size = new System.Drawing.Size(75, 23);
+            this.btnVerificar.TabIndex = 27;
+            this.btnVerificar.Text = "Verificar";
+            this.btnVerificar.UseVisualStyleBackColor = true;
+            this.btnVerificar.Click += new System.EventHandler(this.btnVerificar_Click);
+            // 
             // FormFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(750, 453);
+            this.Controls.Add(this.btnVerificar);
             this.Controls.Add(this.cbxFuncao);
             this.Controls.Add(this.cbxGenero);
             this.Controls.Add(this.btnSair);
@@ -424,5 +439,6 @@ namespace Boteco
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.ComboBox cbxGenero;
         private System.Windows.Forms.ComboBox cbxFuncao;
+        private System.Windows.Forms.Button btnVerificar;
     }
 }

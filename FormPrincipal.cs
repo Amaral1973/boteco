@@ -19,7 +19,8 @@ namespace Boteco
 
         private void funcionáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormFuncionario func = new FormFuncionario();
+            var func = new FormFuncionario();
+            func.MdiParent = this;
             func.Show();
         }
 
@@ -35,8 +36,28 @@ namespace Boteco
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormCliente cliente = new FormCliente();
-            cliente.Show();
+            var cli = new FormCliente();
+            cli.MdiParent = this;
+            cli.Show();
+        }
+
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is MdiClient)
+                {
+                    control.BackColor = Color.White;
+                    break;
+                }
+            }
+        }
+
+        private void pbFuncionario_Click(object sender, EventArgs e)
+        {
+            var func = new FormFuncionario();
+            func.MdiParent = this;
+            func.Show();
         }
     }
 }
