@@ -30,3 +30,4 @@ C:\Programas\Boteco2\obj\Debug\Boteco.csproj.GenerateResource.cache
 C:\Programas\Boteco2\obj\Debug\Boteco.csproj.CoreCompileInputs.cache
 C:\Programas\Boteco2\obj\Debug\Boteco.exe
 C:\Programas\Boteco2\obj\Debug\Boteco.pdb
+C:\Programas\Boteco\obj\Debug\Boteco.FormMenu.resources

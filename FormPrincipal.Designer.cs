@@ -37,15 +37,7 @@ namespace Boteco
             this.cardápioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pbVenda = new System.Windows.Forms.PictureBox();
-            this.pbProduto = new System.Windows.Forms.PictureBox();
-            this.pbCliente = new System.Windows.Forms.PictureBox();
-            this.pbFuncionario = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbVenda)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProduto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCliente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFuncionario)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -110,56 +102,11 @@ namespace Boteco
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
-            // pbVenda
-            // 
-            this.pbVenda.Image = global::Boteco.Properties.Resources.venda;
-            this.pbVenda.Location = new System.Drawing.Point(546, 38);
-            this.pbVenda.Name = "pbVenda";
-            this.pbVenda.Size = new System.Drawing.Size(172, 182);
-            this.pbVenda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbVenda.TabIndex = 5;
-            this.pbVenda.TabStop = false;
-            // 
-            // pbProduto
-            // 
-            this.pbProduto.Image = global::Boteco.Properties.Resources.produto;
-            this.pbProduto.Location = new System.Drawing.Point(368, 38);
-            this.pbProduto.Name = "pbProduto";
-            this.pbProduto.Size = new System.Drawing.Size(172, 182);
-            this.pbProduto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbProduto.TabIndex = 4;
-            this.pbProduto.TabStop = false;
-            // 
-            // pbCliente
-            // 
-            this.pbCliente.Image = global::Boteco.Properties.Resources.cliente;
-            this.pbCliente.Location = new System.Drawing.Point(190, 38);
-            this.pbCliente.Name = "pbCliente";
-            this.pbCliente.Size = new System.Drawing.Size(172, 182);
-            this.pbCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCliente.TabIndex = 3;
-            this.pbCliente.TabStop = false;
-            // 
-            // pbFuncionario
-            // 
-            this.pbFuncionario.Image = global::Boteco.Properties.Resources.funcionario;
-            this.pbFuncionario.Location = new System.Drawing.Point(12, 38);
-            this.pbFuncionario.Name = "pbFuncionario";
-            this.pbFuncionario.Size = new System.Drawing.Size(172, 182);
-            this.pbFuncionario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbFuncionario.TabIndex = 2;
-            this.pbFuncionario.TabStop = false;
-            this.pbFuncionario.Click += new System.EventHandler(this.pbFuncionario_Click);
-            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 450);
-            this.Controls.Add(this.pbVenda);
-            this.Controls.Add(this.pbProduto);
-            this.Controls.Add(this.pbCliente);
-            this.Controls.Add(this.pbFuncionario);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IsMdiContainer = true;
@@ -172,10 +119,6 @@ namespace Boteco
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbVenda)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProduto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCliente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFuncionario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,10 +134,6 @@ namespace Boteco
         private System.Windows.Forms.ToolStripMenuItem cardápioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vendasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pbFuncionario;
-        private System.Windows.Forms.PictureBox pbCliente;
-        private System.Windows.Forms.PictureBox pbProduto;
-        private System.Windows.Forms.PictureBox pbVenda;
     }
 }
 

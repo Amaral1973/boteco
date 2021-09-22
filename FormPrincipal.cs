@@ -15,6 +15,10 @@ namespace Boteco
         public FormPrincipal()
         {
             InitializeComponent();
+            var menu = new FormMenu();
+            menu.MdiParent = this;
+            menu.WindowState = FormWindowState.Maximized;
+            menu.Show();
         }
 
         private void funcionáriosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -51,13 +55,6 @@ namespace Boteco
                     break;
                 }
             }
-        }
-
-        private void pbFuncionario_Click(object sender, EventArgs e)
-        {
-            var func = new FormFuncionario();
-            func.MdiParent = this;
-            func.Show();
         }
     }
 }
