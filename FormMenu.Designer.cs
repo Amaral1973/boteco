@@ -38,7 +38,7 @@ namespace Boteco
             // 
             this.lblFuncionário.AutoSize = true;
             this.lblFuncionário.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFuncionário.Location = new System.Drawing.Point(32, 191);
+            this.lblFuncionário.Location = new System.Drawing.Point(34, 191);
             this.lblFuncionário.Name = "lblFuncionário";
             this.lblFuncionário.Size = new System.Drawing.Size(122, 18);
             this.lblFuncionário.TabIndex = 1;

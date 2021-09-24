@@ -63,6 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Botecli.cs" />
     <Compile Include="Boteco.cs" />
     <Compile Include="FormCliente.cs">
       <SubType>Form</SubType>

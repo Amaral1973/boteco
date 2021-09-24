@@ -32,7 +32,7 @@ namespace Boteco
             this.btnLocalizar = new System.Windows.Forms.Button();
             this.lblId = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvCliente = new System.Windows.Forms.DataGridView();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.txtCPF = new System.Windows.Forms.TextBox();
@@ -45,7 +45,7 @@ namespace Boteco
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.btnApagar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLocalizar
@@ -57,6 +57,7 @@ namespace Boteco
             this.btnLocalizar.TabIndex = 0;
             this.btnLocalizar.Text = "Localizar";
             this.btnLocalizar.UseVisualStyleBackColor = true;
+            this.btnLocalizar.Click += new System.EventHandler(this.btnLocalizar_Click);
             // 
             // lblId
             // 
@@ -74,13 +75,13 @@ namespace Boteco
             this.txtId.Size = new System.Drawing.Size(100, 20);
             this.txtId.TabIndex = 2;
             // 
-            // dataGridView1
+            // dgvCliente
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 158);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(490, 150);
-            this.dataGridView1.TabIndex = 3;
+            this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCliente.Location = new System.Drawing.Point(12, 158);
+            this.dgvCliente.Name = "dgvCliente";
+            this.dgvCliente.Size = new System.Drawing.Size(490, 150);
+            this.dgvCliente.TabIndex = 3;
             // 
             // txtNome
             // 
@@ -155,6 +156,7 @@ namespace Boteco
             this.btnInserir.TabIndex = 12;
             this.btnInserir.Text = "Inserir";
             this.btnInserir.UseVisualStyleBackColor = true;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // btnAtualizar
             // 
@@ -165,6 +167,7 @@ namespace Boteco
             this.btnAtualizar.TabIndex = 13;
             this.btnAtualizar.Text = "Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // btnApagar
             // 
@@ -175,6 +178,7 @@ namespace Boteco
             this.btnApagar.TabIndex = 14;
             this.btnApagar.Text = "Apagar";
             this.btnApagar.UseVisualStyleBackColor = true;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
             // 
             // btnSair
             // 
@@ -204,7 +208,7 @@ namespace Boteco
             this.Controls.Add(this.lblCPF);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblNome);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvCliente);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.btnLocalizar);
@@ -213,7 +217,8 @@ namespace Boteco
             this.Name = "FormCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cliente";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FormCliente_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,7 +229,7 @@ namespace Boteco
         private System.Windows.Forms.Button btnLocalizar;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvCliente;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.TextBox txtCPF;

@@ -20,7 +20,7 @@ namespace Boteco
         private void pbFuncionario_Click(object sender, EventArgs e)
         {
             var func = new FormFuncionario();
-            FormPrincipal principal = (FormPrincipal)this.Owner;
+            func.MdiParent = this.MdiParent;
             func.WindowState = FormWindowState.Normal;
             func.Show();
         }
