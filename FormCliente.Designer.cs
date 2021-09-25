@@ -82,6 +82,7 @@ namespace Boteco
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.Size = new System.Drawing.Size(490, 150);
             this.dgvCliente.TabIndex = 3;
+            this.dgvCliente.DoubleClick += new System.EventHandler(this.dgvCliente_DoubleClick);
             // 
             // txtNome
             // 

@@ -80,5 +80,19 @@ namespace Boteco
             List<Botecli> cliente = botecli.listacli();
             dgvCliente.DataSource = cliente;
         }
+
+        private void dgvCliente_DoubleClick(object sender, EventArgs e)
+        {
+            var PegarId = dgvCliente.CurrentCell.RowIndex;
+            var PegarId2 = dgvCliente.Rows[PegarId].Cells[0].Value.ToString();
+            int Id = Convert.ToInt32(PegarId2);
+            Botecli boteco = new Botecli();
+            boteco.LocalizaCli(Id);
+            txtId.Text = Convert.ToString(Id);
+            txtNome.Text = boteco.nome;
+            txtCPF.Text = boteco.cpf;
+            txtDataNascimento.Text = boteco.data_nascimento;
+            txtCelular.Text = boteco.celular;
+        }
     }
 }

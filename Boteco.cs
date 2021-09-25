@@ -105,5 +105,25 @@ namespace Boteco
             cmd.ExecuteNonQuery();
             con.Close();
         }
+
+        public int NFuncionario()
+        {
+            int total = 0;
+            string sql = "SELECT COUNT(*) AS total FROM Funcionario";
+            if (con.State == System.Data.ConnectionState.Open)
+            {
+                con.Close();
+            }
+            con.Open();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                total = Convert.ToInt32(dr["total"]);
+            }
+            dr.Close();
+            con.Close();
+            return total;
+        }
     }
 }
