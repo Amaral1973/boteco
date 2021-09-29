@@ -56,5 +56,17 @@ namespace Boteco
                 }
             }
         }
+
+        private void cardápioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var pro = new FormProduto();
+            pro.MdiParent = this;
+            pro.Show();
+        }
     }
 }

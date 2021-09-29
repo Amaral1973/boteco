@@ -34,8 +34,8 @@ namespace Boteco
             this.pbCliente = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gbDadosGerenciais = new System.Windows.Forms.GroupBox();
-            this.lblTotalFuncionários = new System.Windows.Forms.Label();
             this.lblTotalFunc = new System.Windows.Forms.Label();
+            this.lblTotalFuncionários = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbFuncionario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCliente)).BeginInit();
             this.gbDadosGerenciais.SuspendLayout();
@@ -95,6 +95,14 @@ namespace Boteco
             this.gbDadosGerenciais.TabStop = false;
             this.gbDadosGerenciais.Text = "Dados Gerenciais";
             // 
+            // lblTotalFunc
+            // 
+            this.lblTotalFunc.AutoSize = true;
+            this.lblTotalFunc.Location = new System.Drawing.Point(214, 36);
+            this.lblTotalFunc.Name = "lblTotalFunc";
+            this.lblTotalFunc.Size = new System.Drawing.Size(0, 18);
+            this.lblTotalFunc.TabIndex = 1;
+            // 
             // lblTotalFuncionários
             // 
             this.lblTotalFuncionários.AutoSize = true;
@@ -103,14 +111,6 @@ namespace Boteco
             this.lblTotalFuncionários.Size = new System.Drawing.Size(200, 18);
             this.lblTotalFuncionários.TabIndex = 0;
             this.lblTotalFuncionários.Text = "Nº Total de Funcionários:";
-            // 
-            // lblTotalFunc
-            // 
-            this.lblTotalFunc.AutoSize = true;
-            this.lblTotalFunc.Location = new System.Drawing.Point(214, 36);
-            this.lblTotalFunc.Name = "lblTotalFunc";
-            this.lblTotalFunc.Size = new System.Drawing.Size(0, 18);
-            this.lblTotalFunc.TabIndex = 1;
             // 
             // FormMenu
             // 
@@ -144,7 +144,7 @@ namespace Boteco
         private System.Windows.Forms.PictureBox pbCliente;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox gbDadosGerenciais;
-        private System.Windows.Forms.Label lblTotalFunc;
         private System.Windows.Forms.Label lblTotalFuncionários;
+        public System.Windows.Forms.Label lblTotalFunc;
     }
 }

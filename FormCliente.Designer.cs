@@ -62,9 +62,10 @@ namespace Boteco
             // lblId
             // 
             this.lblId.AutoSize = true;
+            this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblId.Location = new System.Drawing.Point(12, 9);
             this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(16, 13);
+            this.lblId.Size = new System.Drawing.Size(18, 13);
             this.lblId.TabIndex = 1;
             this.lblId.Text = "Id";
             // 
@@ -94,9 +95,10 @@ namespace Boteco
             // lblNome
             // 
             this.lblNome.AutoSize = true;
+            this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNome.Location = new System.Drawing.Point(12, 56);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(35, 13);
+            this.lblNome.Size = new System.Drawing.Size(39, 13);
             this.lblNome.TabIndex = 4;
             this.lblNome.Text = "Nome";
             // 
@@ -110,9 +112,10 @@ namespace Boteco
             // lblCPF
             // 
             this.lblCPF.AutoSize = true;
+            this.lblCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCPF.Location = new System.Drawing.Point(270, 56);
             this.lblCPF.Name = "lblCPF";
-            this.lblCPF.Size = new System.Drawing.Size(27, 13);
+            this.lblCPF.Size = new System.Drawing.Size(30, 13);
             this.lblCPF.TabIndex = 6;
             this.lblCPF.Text = "CPF";
             // 
@@ -126,9 +129,10 @@ namespace Boteco
             // lblDataNascimento
             // 
             this.lblDataNascimento.AutoSize = true;
+            this.lblDataNascimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDataNascimento.Location = new System.Drawing.Point(12, 103);
             this.lblDataNascimento.Name = "lblDataNascimento";
-            this.lblDataNascimento.Size = new System.Drawing.Size(104, 13);
+            this.lblDataNascimento.Size = new System.Drawing.Size(122, 13);
             this.lblDataNascimento.TabIndex = 8;
             this.lblDataNascimento.Text = "Data de Nascimento";
             // 
@@ -142,9 +146,10 @@ namespace Boteco
             // lblCelular
             // 
             this.lblCelular.AutoSize = true;
+            this.lblCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCelular.Location = new System.Drawing.Point(270, 103);
             this.lblCelular.Name = "lblCelular";
-            this.lblCelular.Size = new System.Drawing.Size(39, 13);
+            this.lblCelular.Size = new System.Drawing.Size(46, 13);
             this.lblCelular.TabIndex = 10;
             this.lblCelular.Text = "Celular";
             // 

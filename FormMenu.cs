@@ -12,6 +12,12 @@ namespace Boteco
 {
     public partial class FormMenu : Form
     {
+        public string Total
+        {
+            get { return lblTotalFunc.Text; }
+            set { lblTotalFunc.Text = value; }
+        }
+
         public FormMenu()
         {
             InitializeComponent();
@@ -23,8 +29,8 @@ namespace Boteco
         private void pbFuncionario_Click(object sender, EventArgs e)
         {
             var func = new FormFuncionario();
+            func.Total = this;
             func.MdiParent = this.MdiParent;
-            func.WindowState = FormWindowState.Normal;
             func.Show();
         }
 
