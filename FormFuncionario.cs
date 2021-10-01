@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Net;
 using System.IO;
+using System.Data.SqlClient;
 
 namespace Boteco
 {
@@ -212,6 +213,28 @@ namespace Boteco
                 }
             }
 
+        }
+
+        private void txtCPF_Leave(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programas\\Boteco\\DbBoteco.mdf;Integrated Security=True");
+            string sql = "SELECT nome FROM Funcionario WHERE cpf=@cpf";
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.Parameters.AddWithValue("@cpf", SqlDbType.NChar).Value = txtCPF.Text.Trim();
+            con.Open();
+            cmd.CommandType = CommandType.Text;
+            SqlDataReader rd = cmd.ExecuteReader();
+            if (rd.HasRows)
+            {
+                MessageBox.Show("Funcionário já existente em nossa base de dados", "Produto Repetido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtNome.Text = "";
+                txtCPF.Text = "";
+                txtNome.Focus();
+                rd.Close();
+                con.Close();
+            }
+            rd.Close();
+            con.Close();
         }
     }
 }

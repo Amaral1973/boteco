@@ -108,6 +108,7 @@ namespace Boteco
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(129, 20);
             this.txtCPF.TabIndex = 7;
+            this.txtCPF.Leave += new System.EventHandler(this.txtCPF_Leave);
             // 
             // lblCPF
             // 

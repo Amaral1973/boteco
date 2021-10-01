@@ -57,6 +57,7 @@ namespace Boteco
             this.btnLocalizar.TabIndex = 0;
             this.btnLocalizar.Text = "Localizar";
             this.btnLocalizar.UseVisualStyleBackColor = true;
+            this.btnLocalizar.Click += new System.EventHandler(this.btnLocalizar_Click);
             // 
             // lblId
             // 
@@ -82,6 +83,7 @@ namespace Boteco
             this.dgvProduto.Name = "dgvProduto";
             this.dgvProduto.Size = new System.Drawing.Size(422, 150);
             this.dgvProduto.TabIndex = 3;
+            this.dgvProduto.DoubleClick += new System.EventHandler(this.dgvProduto_DoubleClick);
             // 
             // txtNome
             // 
@@ -89,6 +91,7 @@ namespace Boteco
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(326, 20);
             this.txtNome.TabIndex = 5;
+            this.txtNome.Leave += new System.EventHandler(this.txtNome_Leave);
             // 
             // lblNome
             // 
@@ -171,6 +174,7 @@ namespace Boteco
             this.btnAtualizar.TabIndex = 13;
             this.btnAtualizar.Text = "Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // btnApagar
             // 
@@ -181,6 +185,7 @@ namespace Boteco
             this.btnApagar.TabIndex = 14;
             this.btnApagar.Text = "Apagar";
             this.btnApagar.UseVisualStyleBackColor = true;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
             // 
             // btnSair
             // 
@@ -219,6 +224,7 @@ namespace Boteco
             this.Name = "FormProduto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Produtos";
+            this.Load += new System.EventHandler(this.FormProduto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

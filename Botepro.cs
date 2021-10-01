@@ -13,23 +13,27 @@ namespace Boteco
         public string nome { get; set; }
         public string tipo { get; set; }
         public int quantidade { get; set; }
-        public decimal preco { get; set; }
+        public string preco { get; set; }
 
         SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programas\\Boteco\\DbBoteco.mdf;Integrated Security=True");
 
-        public void InserirPro(string nome, string tipo, int quantidade, decimal preco)
+        public void InserirPro(string nome, string tipo, int quantidade, string preco)
         {
-            string sql = "INSERT INTO Produto(nome,tipo,quantidade,preco) VALUES ('" + nome + "','" + tipo + "','" + quantidade + "','" + preco + "')";
-            con.Open();
-            SqlCommand cmd = new SqlCommand(sql, con);
-            cmd.ExecuteNonQuery();
-            con.Close();
+                string sql = "INSERT INTO Produto(nome,tipo,quantidade,preco) VALUES ('" + nome + "','" + tipo + "','" + quantidade + "','" + preco + "')";
+                con.Open();
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
         }
 
         public List<Botepro> listaproduto()
         {
             List<Botepro> li = new List<Botepro>();
             string sql = "SELECT * FROM Produto";
+            if (con.State == System.Data.ConnectionState.Open)
+            {
+                con.Close();
+            }
             con.Open();
             SqlCommand cmd = new SqlCommand(sql, con);
             SqlDataReader dr = cmd.ExecuteReader();
@@ -40,7 +44,7 @@ namespace Boteco
                 f.nome = dr["nome"].ToString();
                 f.tipo = dr["tipo"].ToString();
                 f.quantidade = Convert.ToInt32(dr["quantidade"]);
-                f.preco = Convert.ToDecimal(dr["preco"]);
+                f.preco = dr["preco"].ToString();
                 li.Add(f);
             }
             return li;
@@ -66,13 +70,13 @@ namespace Boteco
                 nome = dr["nome"].ToString();
                 tipo = dr["tipo"].ToString();
                 quantidade = Convert.ToInt32(dr["quantidade"]);
-                preco = Convert.ToDecimal(dr["preco"]);
+                preco = dr["preco"].ToString();
             }
             dr.Close();
             con.Close();
         }
 
-        public void AtualizarPro(int id, string nome, string tipo, int quantidade, decimal preco)
+        public void AtualizarPro(int id, string nome, string tipo, int quantidade, string preco)
         {
             string sql = "UPDATE Produto SET nome='" + nome + "',tipo='" + tipo + "',quantidade='" + quantidade + "',preco='" + preco + "' WHERE Id='" + id + "'";
             con.Open();

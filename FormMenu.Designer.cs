@@ -36,9 +36,12 @@ namespace Boteco
             this.gbDadosGerenciais = new System.Windows.Forms.GroupBox();
             this.lblTotalFunc = new System.Windows.Forms.Label();
             this.lblTotalFuncionários = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pbProdutos = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbFuncionario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCliente)).BeginInit();
             this.gbDadosGerenciais.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProdutos)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFuncionário
@@ -112,6 +115,27 @@ namespace Boteco
             this.lblTotalFuncionários.TabIndex = 0;
             this.lblTotalFuncionários.Text = "Nº Total de Funcionários:";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(398, 191);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(102, 18);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "PRODUTOS";
+            // 
+            // pbProdutos
+            // 
+            this.pbProdutos.Image = global::Boteco.Properties.Resources.produto;
+            this.pbProdutos.Location = new System.Drawing.Point(382, 61);
+            this.pbProdutos.Name = "pbProdutos";
+            this.pbProdutos.Size = new System.Drawing.Size(129, 123);
+            this.pbProdutos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbProdutos.TabIndex = 5;
+            this.pbProdutos.TabStop = false;
+            this.pbProdutos.Click += new System.EventHandler(this.pbProdutos_Click);
+            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -119,6 +143,8 @@ namespace Boteco
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.pbProdutos);
             this.Controls.Add(this.gbDadosGerenciais);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbCliente);
@@ -132,6 +158,7 @@ namespace Boteco
             ((System.ComponentModel.ISupportInitialize)(this.pbCliente)).EndInit();
             this.gbDadosGerenciais.ResumeLayout(false);
             this.gbDadosGerenciais.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProdutos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,5 +173,7 @@ namespace Boteco
         private System.Windows.Forms.GroupBox gbDadosGerenciais;
         private System.Windows.Forms.Label lblTotalFuncionários;
         public System.Windows.Forms.Label lblTotalFunc;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pbProdutos;
     }
 }
