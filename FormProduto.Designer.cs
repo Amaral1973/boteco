@@ -78,12 +78,15 @@ namespace Boteco
             // 
             // dgvProduto
             // 
+            this.dgvProduto.AllowUserToAddRows = false;
+            this.dgvProduto.AllowUserToDeleteRows = false;
             this.dgvProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProduto.Location = new System.Drawing.Point(12, 196);
             this.dgvProduto.Name = "dgvProduto";
+            this.dgvProduto.ReadOnly = true;
             this.dgvProduto.Size = new System.Drawing.Size(422, 150);
             this.dgvProduto.TabIndex = 3;
-            this.dgvProduto.DoubleClick += new System.EventHandler(this.dgvProduto_DoubleClick);
+            this.dgvProduto.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduto_CellDoubleClick);
             // 
             // txtNome
             // 

@@ -32,3 +32,4 @@ C:\Programas\Boteco\obj\Debug\Boteco.csproj.CoreCompileInputs.cache
 C:\Programas\Boteco\obj\Debug\Boteco.exe
 C:\Programas\Boteco\obj\Debug\Boteco.pdb
 C:\Programas\Boteco\obj\Debug\Boteco.csproj.AssemblyReference.cache
+C:\Programas\Boteco\obj\Debug\Boteco.FormVenda.resources

@@ -38,10 +38,13 @@ namespace Boteco
             this.lblTotalFuncionários = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pbProdutos = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pbVenda = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbFuncionario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCliente)).BeginInit();
             this.gbDadosGerenciais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProdutos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbVenda)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFuncionário
@@ -136,6 +139,27 @@ namespace Boteco
             this.pbProdutos.TabStop = false;
             this.pbProdutos.Click += new System.EventHandler(this.pbProdutos_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(554, 191);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(152, 18);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "VENDA / PEDIDOS";
+            // 
+            // pbVenda
+            // 
+            this.pbVenda.Image = global::Boteco.Properties.Resources.venda;
+            this.pbVenda.Location = new System.Drawing.Point(565, 61);
+            this.pbVenda.Name = "pbVenda";
+            this.pbVenda.Size = new System.Drawing.Size(129, 123);
+            this.pbVenda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbVenda.TabIndex = 7;
+            this.pbVenda.TabStop = false;
+            this.pbVenda.Click += new System.EventHandler(this.pbVenda_Click);
+            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -143,6 +167,8 @@ namespace Boteco
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.pbVenda);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pbProdutos);
             this.Controls.Add(this.gbDadosGerenciais);
@@ -159,6 +185,7 @@ namespace Boteco
             this.gbDadosGerenciais.ResumeLayout(false);
             this.gbDadosGerenciais.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProdutos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbVenda)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,5 +202,7 @@ namespace Boteco
         public System.Windows.Forms.Label lblTotalFunc;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pbProdutos;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pbVenda;
     }
 }

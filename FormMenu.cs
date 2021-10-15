@@ -47,5 +47,12 @@ namespace Boteco
             pro.MdiParent = this.MdiParent;
             pro.Show();
         }
+
+        private void pbVenda_Click(object sender, EventArgs e)
+        {
+            var ven = new FormVenda();
+            ven.MdiParent = this.MdiParent;
+            ven.Show();
+        }
     }
 }
