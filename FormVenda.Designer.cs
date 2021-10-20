@@ -270,6 +270,7 @@ namespace Boteco
             this.btnFinalizarPedido.TabIndex = 22;
             this.btnFinalizarPedido.Text = "Finalizar Pedido";
             this.btnFinalizarPedido.UseVisualStyleBackColor = true;
+            this.btnFinalizarPedido.Click += new System.EventHandler(this.btnFinalizarPedido_Click);
             // 
             // btnFinalizarVenda
             // 

@@ -232,5 +232,43 @@ namespace Boteco
                 }
             }
         }
+
+        private void btnFinalizarPedido_Click(object sender, EventArgs e)
+        {
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+
+            con.Open();
+            SqlCommand cmd = new SqlCommand("InserirVenda", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Id_pessoa", SqlDbType.NChar).Value = cbxCliente.SelectedValue;
+            cmd.Parameters.AddWithValue("@total", SqlDbType.Decimal).Value = Convert.ToDecimal(txtTotal.Text);
+            cmd.Parameters.AddWithValue("@data_venda", SqlDbType.Date).Value = DateTime.Now;
+            cmd.Parameters.AddWithValue("@situacao", SqlDbType.NChar).Value = "Aberta";
+            cmd.ExecuteNonQuery();
+
+            string idvenda = "SELECT IDENT_CURRENT('Venda') AS id_venda";
+            SqlCommand cmd2 = new SqlCommand(idvenda, con);
+            Int32 idvenda2 = Convert.ToInt32(cmd2.ExecuteScalar());
+
+            foreach  (DataGridViewRow dr in dgvVenda.Rows)
+            {
+                SqlCommand cmditens = new SqlCommand("InserirItensPedidos", con);
+                cmditens.CommandType = CommandType.StoredProcedure;
+                cmditens.Parameters.AddWithValue("@id_venda", SqlDbType.Int).Value = idvenda2;
+                cmditens.Parameters.AddWithValue("@id_produto", SqlDbType.Int).Value = Convert.ToInt32(dr.Cells[0].Value);
+                cmditens.Parameters.AddWithValue("@quantidade", SqlDbType.Int).Value = Convert.ToInt32(dr.Cells[2].Value);
+                cmditens.Parameters.AddWithValue("@valor_unitario", SqlDbType.Decimal).Value = Convert.ToDecimal(dr.Cells[3].Value);
+                cmditens.Parameters.AddWithValue("@valor_total", SqlDbType.Decimal).Value = Convert.ToDecimal(dr.Cells[4].Value);
+                cmditens.ExecuteNonQuery();
+            }
+            con.Close();
+            dgvVenda.Rows.Clear();
+            dgvVenda.Refresh();
+            txtTotal.Text = "";
+            MessageBox.Show("Pedido realizado com sucesso!", "Pedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
