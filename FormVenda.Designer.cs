@@ -53,6 +53,8 @@ namespace Boteco
             this.btnSair = new System.Windows.Forms.Button();
             this.btnFinalizarPedido = new System.Windows.Forms.Button();
             this.btnFinalizarVenda = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblEstoque = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenda)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,11 +94,15 @@ namespace Boteco
             // 
             // dgvVenda
             // 
+            this.dgvVenda.AllowUserToAddRows = false;
+            this.dgvVenda.AllowUserToDeleteRows = false;
             this.dgvVenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVenda.Location = new System.Drawing.Point(12, 212);
             this.dgvVenda.Name = "dgvVenda";
+            this.dgvVenda.ReadOnly = true;
             this.dgvVenda.Size = new System.Drawing.Size(588, 150);
             this.dgvVenda.TabIndex = 4;
+            this.dgvVenda.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVenda_CellClick);
             // 
             // lblCliente
             // 
@@ -186,6 +192,7 @@ namespace Boteco
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(100, 20);
             this.txtQuantidade.TabIndex = 14;
+            this.txtQuantidade.Leave += new System.EventHandler(this.txtQuantidade_Leave);
             // 
             // txtValor
             // 
@@ -197,7 +204,7 @@ namespace Boteco
             // btnNovoItem
             // 
             this.btnNovoItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNovoItem.Location = new System.Drawing.Point(206, 112);
+            this.btnNovoItem.Location = new System.Drawing.Point(374, 110);
             this.btnNovoItem.Name = "btnNovoItem";
             this.btnNovoItem.Size = new System.Drawing.Size(99, 23);
             this.btnNovoItem.TabIndex = 16;
@@ -208,22 +215,24 @@ namespace Boteco
             // btnEditarItem
             // 
             this.btnEditarItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarItem.Location = new System.Drawing.Point(206, 141);
+            this.btnEditarItem.Location = new System.Drawing.Point(374, 139);
             this.btnEditarItem.Name = "btnEditarItem";
             this.btnEditarItem.Size = new System.Drawing.Size(99, 23);
             this.btnEditarItem.TabIndex = 17;
             this.btnEditarItem.Text = "Editar Item";
             this.btnEditarItem.UseVisualStyleBackColor = true;
+            this.btnEditarItem.Click += new System.EventHandler(this.btnEditarItem_Click);
             // 
             // btnExcluirItem
             // 
             this.btnExcluirItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluirItem.Location = new System.Drawing.Point(206, 172);
+            this.btnExcluirItem.Location = new System.Drawing.Point(374, 170);
             this.btnExcluirItem.Name = "btnExcluirItem";
             this.btnExcluirItem.Size = new System.Drawing.Size(99, 23);
             this.btnExcluirItem.TabIndex = 18;
             this.btnExcluirItem.Text = "Excluir Item";
             this.btnExcluirItem.UseVisualStyleBackColor = true;
+            this.btnExcluirItem.Click += new System.EventHandler(this.btnExcluirItem_Click);
             // 
             // txtTotal
             // 
@@ -272,11 +281,32 @@ namespace Boteco
             this.btnFinalizarVenda.Text = "Finalizar Venda";
             this.btnFinalizarVenda.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(176, 149);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Estoque:";
+            // 
+            // lblEstoque
+            // 
+            this.lblEstoque.AutoSize = true;
+            this.lblEstoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstoque.Location = new System.Drawing.Point(235, 146);
+            this.lblEstoque.Name = "lblEstoque";
+            this.lblEstoque.Size = new System.Drawing.Size(0, 20);
+            this.lblEstoque.TabIndex = 25;
+            // 
             // FormVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(613, 423);
+            this.Controls.Add(this.lblEstoque);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnFinalizarVenda);
             this.Controls.Add(this.btnFinalizarPedido);
             this.Controls.Add(this.btnSair);
@@ -339,5 +369,7 @@ namespace Boteco
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnFinalizarPedido;
         private System.Windows.Forms.Button btnFinalizarVenda;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblEstoque;
     }
 }
