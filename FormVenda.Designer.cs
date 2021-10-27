@@ -67,6 +67,7 @@ namespace Boteco
             this.btnLocalizar.TabIndex = 0;
             this.btnLocalizar.Text = "Localizar Pedido / Venda";
             this.btnLocalizar.UseVisualStyleBackColor = true;
+            this.btnLocalizar.Click += new System.EventHandler(this.btnLocalizar_Click);
             // 
             // cbxCliente
             // 

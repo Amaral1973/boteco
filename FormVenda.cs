@@ -270,5 +270,46 @@ namespace Boteco
             txtTotal.Text = "";
             MessageBox.Show("Pedido realizado com sucesso!", "Pedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void btnLocalizar_Click(object sender, EventArgs e)
+        {
+            CarregaCbxProduto();
+            txtTotal.Text = "";
+            dgvVenda.Columns.Clear();
+            dgvVenda.Rows.Clear();
+            con.Open();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("VendaId", con);
+                cmd.Parameters.AddWithValue("@Id", SqlDbType.Int).Value = Convert.ToInt32(txtIdVenda.Text.Trim());
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                string venda = dt.Rows[0]["situacao"].ToString();
+                int linhas = dt.Rows.Count;
+                if (dt.Rows.Count > 0 && venda == "Aberta")
+                {
+                    con.Close();
+                    con.Open();
+                    SqlCommand pedido = new SqlCommand("LocalizarPedido", con);
+                    pedido.Parameters.AddWithValue("@Id", SqlDbType.Int).Value = Convert.ToInt32(txtIdVenda.Text.Trim());
+                    pedido.CommandType = CommandType.StoredProcedure;
+                    SqlDataAdapter ped = new SqlDataAdapter(pedido);
+                    DataTable dtped = new DataTable();
+                    ped.Fill(dtped);
+                    int linhasped = dtped.Rows.Count;
+                    if (dtped.Rows.Count > 0)
+                    {
+
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Nenhum pedido ou venda localizado com esta ID!", "Não localizado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            con.Close();
+        }
     }
 }
