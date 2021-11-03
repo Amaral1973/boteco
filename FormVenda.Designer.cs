@@ -152,6 +152,7 @@ namespace Boteco
             this.btnAtualizarPedido.TabIndex = 9;
             this.btnAtualizarPedido.Text = "Atualizar Pedido";
             this.btnAtualizarPedido.UseVisualStyleBackColor = true;
+            this.btnAtualizarPedido.Click += new System.EventHandler(this.btnAtualizarPedido_Click);
             // 
             // lblIdProduto
             // 
@@ -282,6 +283,7 @@ namespace Boteco
             this.btnFinalizarVenda.TabIndex = 23;
             this.btnFinalizarVenda.Text = "Finalizar Venda";
             this.btnFinalizarVenda.UseVisualStyleBackColor = true;
+            this.btnFinalizarVenda.Click += new System.EventHandler(this.btnFinalizarVenda_Click);
             // 
             // label1
             // 
