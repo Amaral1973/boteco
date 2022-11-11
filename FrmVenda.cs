@@ -162,5 +162,104 @@ namespace BotecoTDS08
                 MessageBox.Show("Produto já cadastrado!", "Produto repetido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void dgvPedido_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = this.dgvPedido.Rows[e.RowIndex];
+            cbxProduto.Text = row.Cells[1].Value.ToString();
+            txtIdProduto.Text = row.Cells[0].Value.ToString();
+            txtQuantidade.Text = row.Cells[2].Value.ToString();
+            txtValor.Text = row.Cells[3].Value.ToString();
+        }
+
+        private void btnEditarItem_Click(object sender, EventArgs e)
+        {
+            int linha = dgvPedido.CurrentRow.Index;
+            dgvPedido.Rows[linha].Cells[0].Value = txtIdProduto.Text;
+            dgvPedido.Rows[linha].Cells[1].Value = cbxProduto.Text;
+            dgvPedido.Rows[linha].Cells[2].Value = txtQuantidade.Text;
+            dgvPedido.Rows[linha].Cells[3].Value = txtValor.Text;
+            dgvPedido.Rows[linha].Cells[4].Value = Convert.ToDecimal(txtValor.Text) * Convert.ToDecimal(txtQuantidade.Text);
+            cbxProduto.Text = "";
+            txtIdProduto.Text = "";
+            txtQuantidade.Text = "";
+            txtValor.Text = "";
+            decimal soma = 0;
+            foreach (DataGridViewRow dr in dgvPedido.Rows)
+                soma += Convert.ToDecimal(dr.Cells[4].Value);
+            txtTotal.Text = Convert.ToString(soma);
+        }
+
+        private void btnExcluirItem_Click(object sender, EventArgs e)
+        {
+            int linha = dgvPedido.CurrentRow.Index;
+            dgvPedido.Rows.RemoveAt(linha);
+            dgvPedido.Refresh();
+            cbxProduto.Text = "";
+            txtIdProduto.Text = "";
+            txtQuantidade.Text = "";
+            txtValor.Text = "";
+            decimal soma = 0;
+            foreach (DataGridViewRow dr in dgvPedido.Rows)
+                soma += Convert.ToDecimal(dr.Cells[4].Value);
+            txtTotal.Text = Convert.ToString(soma);
+        }
+
+        private void txtQuantidade_Leave(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("Quantidade_Produto", con);
+            cmd.Parameters.AddWithValue("@Id", txtIdProduto.Text);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataReader dr = cmd.ExecuteReader();
+            int valor1 = 0;
+            bool conversaoSucedida = int.TryParse(txtQuantidade.Text, out valor1);
+            if (dr.Read())
+            {
+                int valor2 = Convert.ToInt32(dr["quantidade"].ToString());
+                if (valor1 > valor2)
+                {
+                    MessageBox.Show("Não tem quantidade suficiente!", "Estoque insuficiente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtQuantidade.Text = "";
+                    txtQuantidade.Focus();
+                }
+            }
+            con.Close();
+        }
+
+        private void btnFinalizarPedido_Click(object sender, EventArgs e)
+        {
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+            con.Open();
+            SqlCommand cmd = new SqlCommand("InserirVenda", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Id_pessoa", SqlDbType.NChar).Value = cbxCliente.SelectedValue;
+            cmd.Parameters.AddWithValue("@total", SqlDbType.Decimal).Value = Convert.ToDecimal(txtTotal.Text);
+            cmd.Parameters.AddWithValue("@data_venda", SqlDbType.Date).Value = DateTime.Now;
+            cmd.Parameters.AddWithValue("@situacao", SqlDbType.NChar).Value = "Aberta";
+            cmd.ExecuteNonQuery();
+            string idvenda = "SELECT IDENT_CURRENT('Venda') AS id_venda";
+            SqlCommand cmd2 = new SqlCommand(idvenda, con);
+            Int32 idvenda2 = Convert.ToInt32(cmd2.ExecuteScalar());
+            foreach (DataGridViewRow dr in dgvPedido.Rows)
+            {
+                SqlCommand cmditens = new SqlCommand("InserirItensPedidos", con);
+                cmditens.CommandType = CommandType.StoredProcedure;
+                cmditens.Parameters.AddWithValue("@id_venda", SqlDbType.Int).Value = idvenda2;
+                cmditens.Parameters.AddWithValue("@id_produto", SqlDbType.Int).Value = Convert.ToInt32(dr.Cells[0].Value);
+                cmditens.Parameters.AddWithValue("@quantidade", SqlDbType.Int).Value = Convert.ToInt32(dr.Cells[2].Value);
+                cmditens.Parameters.AddWithValue("@valor_unitario", SqlDbType.Decimal).Value = Convert.ToDecimal(dr.Cells[3].Value);
+                cmditens.Parameters.AddWithValue("@valor_total", SqlDbType.Decimal).Value = Convert.ToDecimal(dr.Cells[4].Value);
+                cmditens.ExecuteNonQuery();
+            }
+            con.Close();
+            dgvPedido.Rows.Clear();
+            dgvPedido.Refresh();
+            txtTotal.Text = "";
+            MessageBox.Show("Pedido realizado com sucesso!", "Pedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

@@ -107,6 +107,7 @@
             this.dgvPedido.RowTemplate.Height = 28;
             this.dgvPedido.Size = new System.Drawing.Size(733, 150);
             this.dgvPedido.TabIndex = 4;
+            this.dgvPedido.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedido_CellClick);
             // 
             // label2
             // 
@@ -185,6 +186,7 @@
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(191, 26);
             this.txtQuantidade.TabIndex = 13;
+            this.txtQuantidade.Leave += new System.EventHandler(this.txtQuantidade_Leave);
             // 
             // label5
             // 
@@ -255,6 +257,7 @@
             this.btnEditarItem.TabIndex = 19;
             this.btnEditarItem.Text = "Editar Item";
             this.btnEditarItem.UseVisualStyleBackColor = true;
+            this.btnEditarItem.Click += new System.EventHandler(this.btnEditarItem_Click);
             // 
             // btnExcluirItem
             // 
@@ -267,6 +270,7 @@
             this.btnExcluirItem.TabIndex = 20;
             this.btnExcluirItem.Text = "Excluir Item";
             this.btnExcluirItem.UseVisualStyleBackColor = true;
+            this.btnExcluirItem.Click += new System.EventHandler(this.btnExcluirItem_Click);
             // 
             // txtTotal
             // 
@@ -296,6 +300,7 @@
             this.btnFinalizarPedido.TabIndex = 23;
             this.btnFinalizarPedido.Text = "Finalizar Pedido";
             this.btnFinalizarPedido.UseVisualStyleBackColor = true;
+            this.btnFinalizarPedido.Click += new System.EventHandler(this.btnFinalizarPedido_Click);
             // 
             // btnFinalizarVenda
             // 
